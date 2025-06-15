@@ -32,7 +32,7 @@ function chicote(dice, defense, accuracy, technique, strength, mastery, setNewVa
         setNewValueHit("ACERTO");
         return `Dano de Acerto: ${dano.toFixed(2)}`;
     } else if (dice <= raspao) {
-        percArma = percFisico * 0.45 + (percTecnica * 0.25);
+        percArma = percFisico * 0.7 + (percTecnica * 0.25);
         dano = percArma;
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);

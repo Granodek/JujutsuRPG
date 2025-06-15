@@ -2,7 +2,11 @@ import imgGragas from "../../../assets/Minions/Gragas.jpg"
 import imgKian from "../../../assets/Minions/Kian.png"
 import imgTanka from "../../../assets/Minions/Tanka.png"
 import imgDenki from "../../../assets/Minions/Denki.png"
-
+import imgKyodai from "../../../assets/Minions/Kyodai.png"
+import imgEnrico from "../../../assets/Minions/Enrico.png"
+import imgKizuna from "../../../assets/Minions/Kizuna.png"
+import imgMystery from "../../../assets/Minions/Mystery.png"
+import imgMystery2 from "../../../assets/Minions/Mystery.png"
 
 const minions = {
     Gragas: {
@@ -96,7 +100,7 @@ const minions = {
   },
   Kyodai: {
       name: 'Kyodai',
-      image: imgGragas,
+      image: imgKyodai,
       level: '?',
       grade: 'Grade 1',
       effects: [],
@@ -154,7 +158,7 @@ const minions = {
   },
   Enrico: {
       name: 'Enrico',
-      image: imgGragas,
+      image: imgEnrico,
       level: '?',
       grade: 'Grade 1',
       effects: [],
@@ -181,16 +185,16 @@ const minions = {
         
         },
   },
-  Keimusho: {
-      name: 'Keimusho',
-      image: imgGragas,
+  Kizuna: {
+      name: 'Yurei no Kizuna',
+      image: imgKizuna,
       level: '?',
       grade: 'Grade 1',
       effects: [],
       stats: {
         hp: 1000,
         shield:0,
-        energy: 100,
+        energy: 1000,
         stamina: 14,
         panic: 0,
         Chaos: 0,
@@ -212,7 +216,7 @@ const minions = {
   },
   Mystery: {
       name: '???',
-      image: imgGragas,
+      image: imgMystery,
       level: '?',
       grade: 'Grade Semi 1',
       effects: [],
@@ -241,7 +245,7 @@ const minions = {
   },
   MysteryWoman: {
       name: '???👩',
-      image: imgGragas,
+      image: imgMystery2,
       level: '?',
       grade: 'Grade 1',
       effects: [],

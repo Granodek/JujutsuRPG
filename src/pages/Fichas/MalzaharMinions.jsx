@@ -3,12 +3,10 @@ import React, { useState } from 'react';
 const Equipment = ({ equipment, level, grade, effects }) => {
   const [selectedItem, setSelectedItem] = useState(null);
 
-  // Função para abrir a janela com detalhes do efeito
   const openDetails = (item) => {
     setSelectedItem(item);
   };
 
-  // Função para fechar a janela de detalhes
   const closeDetails = () => {
     setSelectedItem(null);
   };
@@ -17,7 +15,6 @@ const Equipment = ({ equipment, level, grade, effects }) => {
     <div className="p-6 border border-gray-700 bg-gray-900 rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold text-center text-blue-400 mb-4">Minions</h2>
 
-      {/* Equipamentos Equipados */}
       <div className="grid grid-cols-2 gap-6">
         {Object.entries(equipment).map(([slot, item]) => (
           <div
@@ -32,15 +29,14 @@ const Equipment = ({ equipment, level, grade, effects }) => {
         ))}
       </div>
 
-      {/* Janela Modal de Detalhes do Item */}
       {selectedItem && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-          onClick={closeDetails} // Fecha ao clicar fora da janela
+          onClick={closeDetails} 
         >
           <div
             className="bg-gray-900 text-white rounded-lg p-6 w-96 shadow-xl"
-            onClick={(e) => e.stopPropagation()} // Impede o fechamento ao clicar dentro da janela
+            onClick={(e) => e.stopPropagation()} 
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-2xl font-bold text-blue-400">Detalhes do Item</h3>

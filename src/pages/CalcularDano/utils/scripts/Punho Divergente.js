@@ -14,29 +14,29 @@ function punhoDivergente(dice, defense, accuracy, technique, strength, mastery, 
         percFisico *= 1.5   
         dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
-        dano = (dano/100) * (100-defense);
+        dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
         return `Black Flash Dano 300%: ${dano.toFixed(2)}`;
     } else if (dice <= blackFlash) {
         percTecnica *= 2.40 
         dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
-        dano = (dano/100) * (100-defense);
+        dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!");
         return `Black Flash Dano: ${dano.toFixed(2)}`;
     } else if (dice <= acerto) {
         percTecnica *= 0.60
         dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
-        dano = (dano/100) * (100-defense);
+        dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("ACERTO");
         return `Dano de Acerto: ${dano.toFixed(2)}`;
     } else if (dice <= raspao) {
         percFisico *= 0.50
-        percTecnica *= 0.20
+        percTecnica *= 0.30
         dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
-        dano = (dano/100) * (100-defense);
+        dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("RASPAO");
         return `Dano de Raspão: ${dano.toFixed(2)}`;
     } else {

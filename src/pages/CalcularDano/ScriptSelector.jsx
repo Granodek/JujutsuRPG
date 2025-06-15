@@ -1,53 +1,55 @@
-import { useContext} from "react";
-import { DamageContext } from "../../context/main"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faForward } from "@fortawesome/free-solid-svg-icons";
-import { faBackward } from "@fortawesome/free-solid-svg-icons";
+import { useContext, useMemo } from "react";
+import { DamageContext } from "../../context/main";
+import scripts from "./utils/scripts/scripts";
 
 const ScriptSelector = () => {
-    const { handlePreviousScript, handleNextScript, currentScript} = useContext(DamageContext);
+    const {
+        currentScript,
+        handleScriptChange
+    } = useContext(DamageContext);
+
+    const scriptKeys = useMemo(() => Object.keys(scripts), []);
+    const selectedScript = currentScript || { name: 'Ataque não encontrado', image: '' };
 
     return (
         <div id="script-selector" className="flex flex-col justify-center items-center h-full space-y-5">
-            <h2 className="text-white text-2xl font-semibold tracking-wide mb-4 mt-10">Escolha o Ataque</h2>
-            <div id="buttons-container" className="flex flex-row space-x-6">
-            
-                <button
-                                    id="previous-attack"
-                                    onClick={() => {
-                                        handlePreviousScript();
-                                    }}
-                                    className="bg-blue-600 hover:bg-blue-500 text-white h-16 w-16 rounded-full flex justify-center items-center text-4xl shadow-lg transition-transform transform hover:scale-110"
-                                >
-                                    <FontAwesomeIcon icon={faBackward} className="text-slate-100" />
-                                </button>
-                                <button
-                                    id="next-attack"
-                                    onClick={() => {
-                                        handleNextScript();
-                                    }}
-                                    className="bg-blue-600 hover:bg-blue-500 text-white h-16 w-16 rounded-full flex justify-center items-center text-4xl shadow-lg transition-transform transform hover:scale-110"
-                                >
-                                    <FontAwesomeIcon icon={faForward} className="text-slate-100" />
-                                </button>
-            </div>
-        
-            <div id="selected-attack" className="flex flex-col justify-center items-center mt-5 w-full h-80 bg-gray-800 rounded-lg p-4">
-                <img
-                    id="selected-image"
-                    src={currentScript.image}
-                    alt={currentScript.name}
-                    className="h-52 object-cover rounded-lg shadow-md"
-                />
-                <p
-                    id="selected-text"
-                    className="text-white text-lg font-medium mt-5 tracking-wide border-b-2 border-gray-500 pb-1 text-center"
+            <h2 className="text-white text-2xl font-semibold tracking-wide mb-4 mt-10">
+                Escolha o Ataque
+            </h2>
+
+            <div className="flex flex-row space-x-6 w-full max-w-xs">
+                <select
+                    className="w-full p-2.5 rounded-lg border border-gray-400 bg-white cursor-pointer text-center"
+                    onChange={(e) => handleScriptChange(e.target.value)}
+                    value={currentScript ? scriptKeys.find(key => scripts[key].name === currentScript.name) : ''}
                 >
-                    {currentScript.name}
+                    {scriptKeys.map((key) => (
+                    <option key={key} value={key}>
+                        {scripts[key].name}
+                    </option>
+                    ))}
+                </select>
+            </div>
+
+            <div className="flex flex-col justify-center items-center mt-5 w-full h-80 bg-gray-800 rounded-lg p-4">
+                {selectedScript.image ? (
+                    <img
+                        src={selectedScript.image}
+                        alt={selectedScript.name}
+                        className="h-52 object-cover rounded-lg shadow-md"
+                        loading="lazy"
+                    />
+                ) : (
+                    <div className="h-52 flex items-center justify-center text-white">
+                        Sem imagem disponível
+                    </div>
+                )}
+                <p className="text-white text-lg font-medium mt-5 tracking-wide border-b-2 border-gray-500 pb-1 text-center">
+                    {selectedScript.name}
                 </p>
             </div>
         </div>
     );
-}
+};
 
 export default ScriptSelector;

@@ -7,14 +7,15 @@ function favorOfFateFortuneFist(dice, defense, accuracy, technique, strength, ma
 
     if (dice <= 30) {
         percTecnica *= 3.0
-        dano = (percFisico + percTecnica) 
+        percFisico *= 1.5   
+        dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!!!");
         return `Dano Crítico de 100%: ${dano.toFixed(2)}`;
     } else if (dice <= 60) {
         percTecnica *= 2.40 
-        dano = (percFisico + percTecnica)
+        dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!");

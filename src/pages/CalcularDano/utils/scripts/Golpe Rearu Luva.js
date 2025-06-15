@@ -19,30 +19,31 @@ function rearuFist(dice, defense, accuracy, technique, strength, mastery, setNew
     let dano;
 
     if (rearuDice === 1) {
-        percTecnica *= 3.0  
-        dano = (percFisico + percTecnica)
+        percTecnica *= 3.0
+        percFisico *= 1.5   
+        dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!!!");
         return `Black Flash Dano 300%: ${dano.toFixed(2)}`;
     } else if (rearuDice <= blackFlash) {
         percTecnica *= 2.40 
-        dano = (percFisico + percTecnica)
+        dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!");
         return `Black Flash Dano: ${dano.toFixed(2)}`;
     } else if (rearuDice <= acerto) {
-        percTecnica *= 0.40
-        dano = (percFisico + percTecnica)
+        percTecnica *= 0.60
+        dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("ACERTO");
         return `Dano de Acerto: ${dano.toFixed(2)}`;
     } else if (rearuDice <= raspao) {
         percFisico *= 0.50
-        percTecnica *= 0.20
-        dano = (percFisico + percTecnica)
+        percTecnica *= 0.30
+        dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("RASPAO");

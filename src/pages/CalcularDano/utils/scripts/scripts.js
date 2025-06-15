@@ -6,59 +6,77 @@ import fallenKatana from "./Katana Caida";
 import RyumaAttack from "./Ryuma Ataque";
 import chicote from "./Chicote Malzahar";
 import Adagas from "./Adaga";
+import Pistola from "./Pistol";
+import Doze from "./Shotgun";
+import Metralha from "./MachineGun";
 
-import iconKatana from "../../../../assets/Ataques/Katana Caida.png"
-import iconFavorOfFateFortuneFist from "../../../../assets/Ataques/Favor do Destino Punho da Fortuna.png"
-import iconRearuFist from "../../../../assets/Ataques/Punho Rearu.png"
-import iconPunhoDivergente from "../../../../assets/Ataques/Punho Divergente.png"
-import iconFavorOfFateFist from "../../../../assets/Ataques/Favor Do Destino.png"
-import iconChicoteMalzahar from "../../../../assets/Ataques/Chicote Malzahar.png"
-import iconAdagas from "../../../../assets/Ataques/Adaguinhas.png"
+import iconKatana from "../../../../assets/Ataques/Katana Caida.png";
+import iconFavorOfFateFortuneFist from "../../../../assets/Ataques/Favor do Destino Punho da Fortuna.png";
+import iconRearuFist from "../../../../assets/Ataques/Punho Rearu.png";
+import iconPunhoDivergente from "../../../../assets/Ataques/Punho Divergente.png";
+import iconFavorOfFateFist from "../../../../assets/Ataques/Favor Do Destino.png";
+import iconChicoteMalzahar from "../../../../assets/Ataques/Chicote Malzahar.png";
+import iconAdagas from "../../../../assets/Ataques/Adaguinhas.png";
+import iconPistol from "../../../../assets/Ataques/Pistol.png";
+import iconMachinegun from "../../../../assets/Ataques/Machinegun.png";
+import iconShotgun from "../../../../assets/Ataques/Shotgun.png";
 
-
-const scripts = [
-    {
-        name: "Punho Divergente",
-        image: iconPunhoDivergente,
-        calculateDamage: punhoDivergente
-    },
-    {
-        name: "Favor do Destino Punho da Fortuna",
-        image: iconFavorOfFateFortuneFist,
-        calculateDamage: favorOfFateFortuneFist
-    },
-    {
-        name: "Favor do Destino Punho",
-        image: iconFavorOfFateFist,
-        calculateDamage: favorOfFateFist
-    },
-    {
-        name: "Punho Rearu",
-        image: iconRearuFist,
-        calculateDamage: rearuFist
-    },
-    {
-        name: "Fallen",
-        image: iconKatana,
-        calculateDamage: fallenKatana
-    },
-    {
-        name: "Ryuma Ataque",
-        image: '',
-        calculateDamage: RyumaAttack
-    },
-    {
-        name: "Chicote Malzahar",
-        image: iconChicoteMalzahar,
-        calculateDamage: chicote
-    },
-    {
-        name: "Adagas",
-        image: iconAdagas,
-        calculateDamage: Adagas
-    },
-    
-    
-]
+const scripts = {
+  punhoDivergente: {
+    name: "punhoDivergente",
+    image: iconPunhoDivergente,
+    calculateDamage: punhoDivergente,
+  },
+  Fortune: {
+    name: "Favor do Destino Punho da Fortuna",
+    image: iconFavorOfFateFortuneFist,
+    calculateDamage: favorOfFateFortuneFist,
+  },
+  destiny: {
+    name: "Favor do Destino Punho",
+    image: iconFavorOfFateFist,
+    calculateDamage: favorOfFateFist,
+  },
+  Rearu: {
+    name: "Punho Rearu",
+    image: iconRearuFist,
+    calculateDamage: rearuFist,
+  },
+  foice: {
+    name: "Foice",
+    image: iconKatana,
+    calculateDamage: fallenKatana,
+  },
+  Toji: {
+    name: "Restrição Celestial",
+    image: "",
+    calculateDamage: RyumaAttack,
+  },
+  Malzahar: {
+    name: "Chicote Malzahar",
+    image: iconChicoteMalzahar,
+    calculateDamage: chicote,
+  },
+  Faquinha: {
+    name: "Adagas",
+    image: iconAdagas,
+    calculateDamage: Adagas,
+  },
+  TeiTeiTei: {
+    name: "Pistolas",
+    image: iconPistol,
+    calculateDamage: Pistola,
+  },
+  Kabum: {
+    name: "Doze",
+    image: iconShotgun,
+    calculateDamage: Doze,
+  },
+  Metranca: {
+    name: "Metralhadora",
+    image: iconMachinegun,
+    calculateDamage: Metralha,
+  },
+};
 
 export default scripts;
