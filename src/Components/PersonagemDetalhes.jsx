@@ -1,11 +1,11 @@
 // src/components/PersonagemDetalhes.jsx (ou o nome do componente que exibe o personagem)
 
 import React from 'react';
-import HPBar from './HPBar'; // Importe o componente HPBar
-import personagens from '../path/to/personagens'; // Importe os dados do personagem
+import HPBar from './HPBar'; 
+import personagens from '../path/to/personagens'; 
 
 const PersonagemDetalhes = () => {
-  const malzahar = personagens.Malzahar; // Selecione o personagem Malzahar
+  const malzahar = personagens.Malzahar;
 
   return (
     <div>
@@ -14,8 +14,8 @@ const PersonagemDetalhes = () => {
       <p>Level: {malzahar.level}</p>
       <p>Grade: {malzahar.grade}</p>
 
-      {/* Barra de HP */}
-      <HPBar personagem={malzahar} /> {/* Passando Malzahar como prop para o HPBar */}
+    
+      <HPBar personagem={malzahar} /> 
     </div>
   );
 };
