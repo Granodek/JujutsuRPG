@@ -426,7 +426,7 @@ const MainFichas = () => {
           <div className="mt-4">
             <button
               onClick={handleDelete}
-              className="bg-green-600 p-2 rounded text-white"
+              className="bg-red-600 p-2 rounded text-white"
             >
               Deletar Alterações
             </button>
