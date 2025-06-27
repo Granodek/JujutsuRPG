@@ -42,7 +42,7 @@ const personagens = {
       },
   },
   Amaterasu: {
-    name: 'Amaterasu',
+    name: 'Amaterasususu',
     image: imgAmat,
     level: 4,
     grade: 'Grade 1',
