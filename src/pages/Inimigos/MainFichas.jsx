@@ -194,6 +194,11 @@ const MainFichas = () => {
     alert('Dados salvos com sucesso!');
   };
 
+  const handleDelete = () => {
+    localStorage.removeItem('characterData', JSON.stringify(characterData));
+    alert('Dados deletados com sucesso!');
+  };
+
   return (
     <div className="flex min-h-screen bg-red-700 text-white">
       <div className="w-1/4 p-4 bg-gray-900 border-r border-gray-700">
@@ -416,6 +421,14 @@ const MainFichas = () => {
               className="bg-green-600 p-2 rounded text-white"
             >
               Salvar Alterações
+            </button>
+          </div>
+          <div className="mt-4">
+            <button
+              onClick={handleDelete}
+              className="bg-green-600 p-2 rounded text-white"
+            >
+              Deletar Alterações
             </button>
           </div>
         </div>
