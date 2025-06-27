@@ -1,5 +1,3 @@
-// src/components/PersonagemDetalhes.jsx (ou o nome do componente que exibe o personagem)
-
 import React from 'react';
 import HPBar from './HPBar'; 
 import personagens from '../path/to/personagens'; 
