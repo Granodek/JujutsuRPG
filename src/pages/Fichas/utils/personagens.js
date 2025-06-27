@@ -42,7 +42,7 @@ const personagens = {
       },
   },
   Amaterasu: {
-    name: 'Amaterasusususususu',
+    name: 'Amaterasu',
     image: imgAmat,
     level: 4,
     grade: 'Grade 1',
@@ -75,7 +75,7 @@ const personagens = {
     },
 },
   PrinceOfRot: {
-    name: 'Príncipe da Podridão',
+    name: 'Príncipe da Podridão(Morto)',
     image: imgPrinceOfRot,
     level: 21,
     grade: 'Special Grade',
