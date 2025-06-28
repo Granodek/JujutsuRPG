@@ -452,7 +452,7 @@ const MainFichas = () => {
               value={saveName}
               onChange={(e) => setSaveName(e.target.value)}
               className="w-full p-2 rounded bg-gray-700 text-white"
-              placeholder="Ex: Save1, JogoDoMalzahar, etc"
+              placeholder="Ex: Save1, Save2, Minhoca, Besouro, etc"
             />
           </label>
           <div className="mt-4">
