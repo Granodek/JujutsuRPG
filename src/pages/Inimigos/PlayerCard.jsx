@@ -24,21 +24,6 @@ const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateS
       
       
       <div className="bg-[#f9c87f] rounded-xl p-5 text-center shadow-lg flex-1">
-        <div className="bg-[#f9c87f] rounded-xl p-5 text-center shadow-lg flex-1">
-        <div className="mb-5">
-          <label htmlFor="character-select" className="text-xl font-bold">Escolha o Personagem</label>
-          <select
-            id="character-select"
-            onChange={(e) => onSelectCharacter(e.target.value)}
-            value={selectedCharacter}
-            className="w-full p-2.5 rounded-lg border border-gray-400 bg-white cursor-pointer text-center"
-          >
-            {Object.keys(characters).map((name) => (
-              <option key={name} value={name}>{characters[name].name}</option>
-            ))}
-          </select>
-        </div>
-        </div>
         <h2 className="mt-4 text-[#333] font-bold text-xl border-b-2 border-gray-400 shadow-lg shadow-gray-500/50 p-3 bg-gray-200 rounded-lg">
           {character.name}
         </h2>
