@@ -15,6 +15,7 @@ const MainFichas = () => {
   const [equipmentType, setEquipmentType] = useState('');
   const [equipmentGrade, setEquipmentGrade] = useState('');
   const [equipmentEffect, setEquipmentEffect] = useState('');
+  const [saveName, setSaveName] = useState('');
 
   useEffect(() => {
     const savedData = localStorage.getItem('characterData');
@@ -190,13 +191,32 @@ const MainFichas = () => {
   };
 
   const handleSubmit = () => {
-    localStorage.setItem('characterData', JSON.stringify(characterData));
-    alert('Dados salvos com sucesso!');
+    if (!saveName.trim()) {
+      alert('Por favor, digite um nome para o salvamento.');
+      return;
+    }
+
+    localStorage.setItem(`characterData_${saveName}`, JSON.stringify(characterData));
+    alert(`Dados salvos como "${saveName}"!`);
   };
 
-  const handleDelete = () => {
-    localStorage.removeItem('characterData', JSON.stringify(characterData));
-    alert('Dados deletados com sucesso!');
+  const handleLoadSave = (name) => {
+    const saved = localStorage.getItem(`characterData_${name}`);
+    if (saved) {
+      setCharacterData(JSON.parse(saved));
+      alert(`Salvamento "${name}" carregado!`);
+    } else {
+      alert(`Não foi encontrado nenhum salvamento com esse nome.`);
+    }
+  };
+
+  const getAllSaves = () => {
+    return Object.keys(localStorage).filter(key => key.startsWith('characterData_')).map(key => key.replace('characterData_', ''));
+  };
+
+  const handleDeleteSave = (name) => {
+    localStorage.removeItem(`characterData_${name}`);
+    alert(`Salvamento "${name}" deletado!`);
   };
 
   return (
@@ -227,7 +247,18 @@ const MainFichas = () => {
             </li>
           ))}
         </ul>
+        <h3 className="text-lg font-semibold mt-6">Gerenciar Salvamentos</h3>
+        <ul className="list-disc pl-5">
+          {getAllSaves().map((name, index) => (
+            <li key={index}>
+              {name}
+              <button onClick={() => handleLoadSave(name)} className="text-blue-400 ml-2">Carregar</button>
+              <button onClick={() => handleDeleteSave(name)} className="text-red-400 ml-2">Excluir</button>
+            </li>
+          ))}
+        </ul>
       </div>
+      
 
       <div className="w-1/2 p-6 bg-yellow-200 text-black rounded-lg shadow-lg">
         <Character
@@ -414,21 +445,22 @@ const MainFichas = () => {
               Adicionar Equipamento
             </button>
           </div>
-
+          <label className="block mb-2">
+            Nome do salvamento:
+            <input
+              type="text"
+              value={saveName}
+              onChange={(e) => setSaveName(e.target.value)}
+              className="w-full p-2 rounded bg-gray-700 text-white"
+              placeholder="Ex: Save1, JogoDoMalzahar, etc"
+            />
+          </label>
           <div className="mt-4">
             <button
               onClick={handleSubmit}
               className="bg-green-600 p-2 rounded text-white"
             >
               Salvar Alterações
-            </button>
-          </div>
-          <div className="mt-4">
-            <button
-              onClick={handleDelete}
-              className="bg-red-600 p-2 rounded text-white"
-            >
-              Deletar Alterações
             </button>
           </div>
         </div>
