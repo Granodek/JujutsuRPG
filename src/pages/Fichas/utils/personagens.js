@@ -64,7 +64,7 @@ const personagens = {
       Chaos:100,
     },
     inventory: [
-      { name: 'Bandages', quantity: 3, effect:"Provides basic healing for minor injuries, reducing pain and preventing infection." },
+      { name: 'Bandages', quantity: 1, effect:"Provides basic healing for minor injuries, reducing pain and preventing infection." },
     ],
     equipment: {
       dice: { name: 'Duo Of Fate', grade: "Grade 1", effect: "Result 6-6: 3x Status, +30% Accuracy, All negative effects removed, Immune to negative effects, Energy recharges 200% faster, 3x Energy regen, 30% max HP regen per round, skill costs reduced by 50%, can save you from a fatal blow. Result 6-?: All negative effects removed, Status increased by 50%, Energy regenerates 100% faster, Energy regen x2, and Health regenerates 15% of max HP per round. Result 5-?: Increases all of your stats by 30%, Gains double Energy. Result 4-?: Energy gained is doubled, recovers a small amount of Health. Result 3-?: Decreases Energy and Health Regen by 50%. Result 2-?: Paralyzed, No energy regeneration, and loses energy over time. Result 1-?: You Faints, All Status -30%, Poison, Bad Omen Curse. Result 1-1: Teleported to a barren plane, enduring excruciating internal pain, internal and external bleeding, followed by eternal suffering as Death tortures you endlessly. Cost: 0"},
