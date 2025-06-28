@@ -102,7 +102,7 @@ const MainFichas = () => {
       const item = updatedInventory[indexToRemove];
   
       if (item.quantity > 1) {
-        item.quantity -= 0.5;
+        item.quantity -= 1;
       } else {
         updatedInventory.splice(indexToRemove, 1);
       }
