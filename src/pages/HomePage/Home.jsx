@@ -5,6 +5,7 @@ const Home = () => {
     return (
       <div className="bg-black text-white min-h-screen" style={{ backgroundImage: `url(${bgLogo})` }}>
         <div className="flex flex-col items-center justify-center h-screen text-center px-4">
+          
           <h1 className="text-6xl font-bold text-red-700 drop-shadow-lg">
             Bem-vindo ao Mundo dos Caçadores
           </h1>
@@ -21,6 +22,11 @@ const Home = () => {
             <Link to={'/calcular-evento'}>
               <p className="ml-4 px-6 py-3 bg-red-600 hover:bg-red-800 text-white rounded-lg shadow-lg text-lg transition-all">Calcular Evento</p>
             </Link>
+            <button className="rounded-lg text-transparent" ><Link to={"/zoas"}>
+                        <p className="text-transparent">
+                          oi
+                        </p>
+                      </Link></button>
           </div>
         </div>
       </div>
