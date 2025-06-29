@@ -8,6 +8,7 @@ import MainCont from "./pages/contadorRodada/MainCont";
 import StatusScreen from "./pages/Status/StatusScreen";
 import Home from "./pages/HomePage/Home";
 import Navbar from "./Components/Navbar";
+import Zoas from "./pages/Test/zoas";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/inimigos' element={<MainInimigos />} />
         <Route path='/minions' element={<MainMinions />} />
         <Route path='/status' element={<StatusScreen />} />
+        <Route path='/zoas' element={<Zoas />} />
       </Routes>
     </>
   )
