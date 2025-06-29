@@ -22,11 +22,7 @@ const Home = () => {
             <Link to={'/calcular-evento'}>
               <p className="ml-4 px-6 py-3 bg-red-600 hover:bg-red-800 text-white rounded-lg shadow-lg text-lg transition-all">Calcular Evento</p>
             </Link>
-            <button className="rounded-lg text-transparent" ><Link to={"/zoas"}>
-                        <p className="text-transparent">
-                          oi
-                        </p>
-                      </Link></button>
+            
           </div>
         </div>
       </div>

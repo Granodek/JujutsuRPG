@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from "react-router-dom";
 
 const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateStat }) => {
   const [numero, setNumero] = useState(0);
@@ -24,6 +24,8 @@ const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateS
     <div className="bg-[#f9c87f] rounded-xl p-5 shadow-lg max-w-6xl w-[95%] flex gap-5 mx-auto">
       
       <div className="bg-[#f9c87f] rounded-xl p-5 text-center shadow-lg flex-1">
+        
+        
         <div className="mb-5">
           <label htmlFor="character-select" className="text-xl font-bold">Escolha o Personagem</label>
           <select
@@ -36,6 +38,9 @@ const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateS
               <option key={name} value={name}>{characters[name].name}</option>
             ))}
           </select>
+        </div>
+        <div>
+          
         </div>
 
         <div className="flex max-w-[80%] rounded-lg m-10 justify-center">
@@ -168,6 +173,7 @@ const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateS
             ))
           ) : (
             <>
+            
               <div className="flex flex-col mt-4">
                 {['hp', 'shield', 'DarkHp', 'stamina', 'energy', 'panic', 'Chaos'].map((stat) => (
                   <div className="flex flex-row mt-2 w-full" key={stat}>
@@ -232,6 +238,11 @@ const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateS
                   
                   
                 }
+                <button className="rounded-lg text-transparent" ><Link to={"/zoas"}>
+                                        <p className="text-transparent">
+                                          oi
+                                        </p>
+                                      </Link></button>
                   </div>
                 ))
 }</div>
