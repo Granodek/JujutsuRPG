@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import bgLogo from "../../assets/teste2.png"
+import { Helmet } from "react-helmet";
+
 const Home = () => {
     return (
       <div className="bg-black text-white min-h-screen" style={{ backgroundImage: `url(${bgLogo})` }}>
+        <Helmet>
+          <title>RPG Jujutsu Dimension</title>
+        </Helmet>
         <div className="flex flex-col items-center justify-center h-screen text-center px-4">
           
           <h1 className="text-6xl font-bold text-red-700 drop-shadow-lg">

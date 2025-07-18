@@ -2,6 +2,7 @@ import IconCritDamage from '../../assets/Icon_CRIT_DMG.webp'
 import { useContext } from 'react';
 import { DamageContext } from "../../context/main"
 import bgVortex from "../../assets/buraco negro.png"
+import { Helmet } from "react-helmet";
 
 const DamageInputs = () => {
     const {
@@ -16,6 +17,9 @@ const DamageInputs = () => {
             backgroundImage: `url(${bgVortex})`,
         }}>
             <div className="flex flex-col justify-center items-center h-full w-full my-5">
+              <Helmet>
+        <title>Calcular Dano</title>
+      </Helmet>
               <button 
                 id="damage-button" 
                 onClick={(e) => { e.preventDefault(); handleCalculateDamage() }} 

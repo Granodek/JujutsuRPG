@@ -56,7 +56,7 @@ const personagens = {
       panic: 0,
     },
     maxStats: {
-      hp: 2061,
+      hp: 2081,
       shield:2061,
       energy: 2200,
       stamina: 47,

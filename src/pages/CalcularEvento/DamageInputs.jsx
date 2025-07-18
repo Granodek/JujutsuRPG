@@ -1,13 +1,16 @@
 import IconCritDamage from '../../assets/Icon_CRIT_DMG.webp'
 import { useContext } from 'react';
 import { DamageContext } from "../../context/main"
-
+import { Helmet } from "react-helmet";
 
 const DamageInputs = () => {
     const { handleCalculateDamage, setNewValueHit, getColorHit, colorHit, valueDice, valuesHit, calculatedDamage, currentAtletism, handleAtletismChange} = useContext(DamageContext);
     return (
         <form id="inputs" className="bg-transparent  mt-5 p-5 bg-gray-800 rounded-lg bg-contain shadow-lg bg-center  bg-no-repeat">
             <div className="flex flex-col justify-center items-center h-full w-full my-5">
+              <Helmet>
+                <title>Calcular Evento</title>
+              </Helmet>
               <button 
                 id="damage-button" 
                 onClick={(e) => { e.preventDefault(); handleCalculateDamage() }} 

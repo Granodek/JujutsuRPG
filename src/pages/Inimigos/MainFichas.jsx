@@ -3,6 +3,7 @@ import Character from "./PlayerCard";
 import Inventory from "./PlayerInventory";
 import Equipment from "./PlayerEquipment";
 import personagens, { inimigosLista } from './utils/Inimigos';
+import { Helmet } from "react-helmet";
 
 const MainFichas = () => {
   const [selectedCharacter, setSelectedCharacter] = useState('Inimigo');
@@ -221,6 +222,9 @@ const MainFichas = () => {
 
   return (
     <div className="flex min-h-screen bg-red-700 text-white">
+      <Helmet>
+        <title>personalizados</title>
+      </Helmet>
       <div className="w-1/4 p-4 bg-gray-900 border-r border-gray-700">
         <Inventory items={characterData[selectedCharacter].inventory} />
         <h3 className="text-lg font-semibold mt-4">Remover Item</h3>
