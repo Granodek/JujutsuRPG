@@ -116,8 +116,8 @@ const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateS
         })}
 
         <div className="flex flex-col mt-4">
-          {character.name !== 'Malzahar' ? (
-            ['hp', 'shield', 'stamina', 'energy', 'panic', 'Chaos'].map((stat) => (
+          {character.name !== 'Malzahar' && character.name !== 'Rearu' && character.name !== 'Amaterasu' ? (
+            ['hp', 'shield', 'stamina', 'energy', 'panic'].map((stat) => (
               <div className="flex flex-row mt-2 w-full" key={stat}>       
                        
                 <label className="font-bold w-[20%]" htmlFor={`${stat}-change`}>
@@ -171,7 +171,63 @@ const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateS
                 }
               </div>
             ))
-          ) : (
+          ) : character.name !== 'Malzahar' ? ( 
+           ['hp', 'shield', 'stamina', 'energy', 'panic', 'Chaos'].map((stat) => (
+              <div className="flex flex-row mt-2 w-full" key={stat}>       
+                       
+                <label className="font-bold w-[20%]" htmlFor={`${stat}-change`}>
+                  {stat.charAt(0).toUpperCase() + stat.slice(1)}:
+                </label>
+                <input
+                  className="w-[40%] font-sans rounded-lg border border-gray-400 text-center mx-1"
+                  placeholder="0"
+                  type="number"
+                  id={`${stat}-change`}
+                  value={character.stats[stat]}
+                  onChange={(e) => handleInputChange(stat, Number(e.target.value))}
+                />
+                {stat === 'hp'?(<div>
+                  <input 
+                    className="w-[40%] font-sans rounded-lg border border-gray-400 text-center mx-1"
+                    type="number" 
+                    value={numero} 
+                    onChange={(e) => setNumero(Number(e.target.value))} 
+                     />    
+                  <button onClick={() => handleInputChange(stat, character.stats[stat] - Math.round(Math.max(0,(numero -((character.maxStats['stamina']*10)/2) - (character.stats['energy']/10) ))))} type='submit'>Dano</button>
+                  <button className='px-2'>ou</button>
+                  <button onClick={() => handleInputChange(stat, character.stats[stat] +  Math.max(0,numero))} type='submit'>Regen</button>
+                  </div>) : <div></div> 
+                }
+                {stat === 'shield'?(<div>
+                  <input 
+                    className="w-[40%] font-sans rounded-lg border border-gray-400 text-center mx-1"
+                    type="number" 
+                    value={numero3} 
+                    onChange={(e) => setNumero3(Number(e.target.value))} 
+                     />    
+                  <button onClick={() => handleInputChange(stat, character.stats[stat] - Math.round(Math.max(0,numero3)))} type='submit'>Dano</button>
+                  <button className='px-2'>ou</button>
+                  <button onClick={() => handleInputChange(stat, character.stats[stat] +  Math.max(0,numero3))} type='submit'>Regen</button>
+                  </div>) : <div></div> 
+                }
+                {stat === 'energy'?(<div>
+                  <input 
+                    className="w-[40%] font-sans rounded-lg border border-gray-400 text-center mx-1"
+                    type="number" 
+                    value={numero2} 
+                    onChange={(e) => setNumero2(Number(e.target.value))} 
+                     />    
+                  <button onClick={() => handleInputChange(stat, character.stats[stat] - numero2)} type='submit'>Calcular</button>
+                  <button className='px-2'>ou</button>
+                  <button onClick={() => handleInputChange(stat, character.stats[stat] +  Math.max(0,numero2))} type='submit'>Regen</button>
+                  </div>) : <div></div>
+                  
+                  
+                }
+                
+              </div>
+           ))
+        ) : (
             <>
             
               <div className="flex flex-col mt-4">

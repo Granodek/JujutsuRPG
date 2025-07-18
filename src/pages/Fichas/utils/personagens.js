@@ -53,7 +53,6 @@ const personagens = {
       energy: 2200,
       stamina: 45,
       panic: 0,
-      Chaos:0,
     },
     maxStats: {
       hp: 2061,
