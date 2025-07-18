@@ -164,7 +164,7 @@ const personagens = {
     image: imgNocturnal,
     level: 12,
     grade: 'Special Grade',
-    effects: [''],
+    effects: ['Pai Solteiro','Oportunidade de Emprego'],
     stats: {
       hp: 3000,
       shield:0,
