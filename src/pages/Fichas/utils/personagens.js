@@ -68,7 +68,7 @@ const personagens = {
     ],
     equipment: {
       orb:{ name: 'Pet', grade: "Grade 1", effect:"Melhora Items e habilidades, podendo dar até novos poderes nas melhorias, de formas variadas"},
-      Bow: { name: 'Arco', grade: "Grade special", effect: "Sei lá"},
+      Bow: { name: 'Arco FABULOSO', grade: "Grade special", effect: "Sei lá"},
       gloves: { name: 'Emblem Gloves', grade: "Grade 1", effect: "Rectangular Grip: Create a rectangle with your fingers on enemies to mark them. Marked Enemy: While marked, the enemy takes 30% more damage from all attacks and their damage is reduced by 15%. Runtime: 5 Rounds Cost: 0"},
       pistols: { name: 'Luck Fire & Fate Ice', grade: "Grade 1", effect: "Luck Fire: When you shoot with this pistol, it burns enemies, causing fire damage. Fate Ice: When you shoot with this pistol, it freezes the area it hits, causing ice damage. Combined Effect: If you hit a fronzen area with Luck Fire, it causes extra damage. Likewise, if you hit a burning area with Fate Ice, it also deals more damage. Total Bullets: 12" },
       mask: { name: 'Mask of Luck', grade: "Grade 1", effect: "Reflete 20% de qualquer dano crítico. Reduz o dano crítico tomado em 20%." },
