@@ -9,6 +9,8 @@ import Adagas from "./Adaga";
 import Pistola from "./Pistol";
 import Doze from "./Shotgun";
 import Metralha from "./MachineGun";
+import cabeca from "./Cabeçada Divergente";
+import chute from "./Chute Divergente";
 
 import iconKatana from "../../../../assets/Ataques/Katana Caida.png";
 import iconFavorOfFateFortuneFist from "../../../../assets/Ataques/Favor do Destino Punho da Fortuna.png";
@@ -23,9 +25,19 @@ import iconShotgun from "../../../../assets/Ataques/Shotgun.png";
 
 const scripts = {
   punhoDivergente: {
-    name: "punhoDivergente",
+    name: "punho Divergente",
     image: iconPunhoDivergente,
     calculateDamage: punhoDivergente,
+  },
+  chuteDivergente: {
+    name: "chute Divergente",
+    image: iconPunhoDivergente,
+    calculateDamage: chute,
+  },
+  cabecadaDivergente: {
+    name: "cabeçada Divergente",
+    image: iconPunhoDivergente,
+    calculateDamage: cabeca,
   },
   Fortune: {
     name: "Favor do Destino Punho da Fortuna",
