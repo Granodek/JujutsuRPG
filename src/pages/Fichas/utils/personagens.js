@@ -12,7 +12,7 @@ const personagens = {
       image: imgRearu,
       level: 13,
       grade: 'Grade semi-special',
-      effects: ['Resistance +20%', 'Luck +2'],
+      effects: ['Resistance +20%', 'Luck +3'],
       stats: {
         hp: 1081,
         shield:0,
@@ -47,7 +47,7 @@ const personagens = {
     image: imgAmat,
     level: 4,
     grade: 'Grade 1',
-    effects: ['Resistance +20%', 'Luck +2'],
+    effects: ['Resistance +20%', 'Luck +3'],
     stats: {
       hp: 2081,
       shield:0,
