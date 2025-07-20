@@ -6,7 +6,3 @@ export default defineConfig({
   plugins: [react()],
 })
 //npm run build e depois npm run deploy para atualizar
-export default defineConfig({
-  base: '/JujutsuRPG/',
-  ...
-});
