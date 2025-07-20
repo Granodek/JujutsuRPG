@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
+
 const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateStat }) => {
   const [numero, setNumero] = useState(0);
   const [numero2, setNumero2] = useState(0);
