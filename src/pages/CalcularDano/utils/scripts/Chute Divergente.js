@@ -1,5 +1,5 @@
 function chuteDivergente(dice, defense, accuracy, technique, strength, mastery, setNewValueHit) {
-    accuracy *= 0.9   
+    accuracy *= 1.1   
     let acerto = Math.round(accuracy * 0.25);
     let raspao = Math.round(accuracy * 0.40);
     let blackFlash = Math.round(accuracy * 0.1);
