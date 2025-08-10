@@ -194,7 +194,7 @@ const Character = ({ characters, selectedCharacter, onSelectCharacter, onUpdateS
                     value={numero} 
                     onChange={(e) => setNumero(Number(e.target.value))} 
                      />    
-                  <button onClick={() => handleInputChange(stat, character.stats[stat] - Math.round(Math.max(0,(numero -((character.maxStats['stamina']*10)/2) - (character.stats['energy']/10) ))))} type='submit'>Dano</button>
+                  <button onClick={() => handleInputChange(stat, character.stats[stat] - Math.round(Math.max(0,(numero -((character.maxStats['stamina']*10)/2) - (character.stats['energy']/10) - ( ((((character.maxStats['stamina']*10) * 1/1.2) * 1.4 ) - (character.maxStats['stamina']*10) )/2 ) ))))} type='submit'>Dano</button>
                   <button className='px-2'>ou</button>
                   <button onClick={() => handleInputChange(stat, character.stats[stat] +  Math.max(0,numero))} type='submit'>Regen</button>
                   </div>) : <div></div> 
