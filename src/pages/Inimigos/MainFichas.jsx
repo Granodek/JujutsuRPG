@@ -197,12 +197,12 @@ const MainFichas = () => {
       return;
     }
 
-    localStorage.setItem(`characterEnemyData_${saveName}`, JSON.stringify(characterData));
+    localStorage.setItem(`EnemyData_${saveName}`, JSON.stringify(characterData));
     alert(`Dados salvos como "${saveName}"!`);
   };
 
   const handleLoadSave = (name) => {
-    const saved = localStorage.getItem(`characterEnemyData_${name}`);
+    const saved = localStorage.getItem(`EnemyData_${name}`);
     if (saved) {
       setCharacterData(JSON.parse(saved));
       alert(`Salvamento "${name}" carregado!`);
@@ -212,11 +212,11 @@ const MainFichas = () => {
   };
 
   const getAllSaves = () => {
-    return Object.keys(localStorage).filter(key => key.startsWith('characterEnemyData_')).map(key => key.replace('characterEnemyData_', ''));
+    return Object.keys(localStorage).filter(key => key.startsWith('EnemyData_')).map(key => key.replace('EnemyData_', ''));
   };
 
   const handleDeleteSave = (name) => {
-    localStorage.removeItem(`characterEnemyData_${name}`);
+    localStorage.removeItem(`EnemyData_${name}`);
     alert(`Salvamento "${name}" deletado!`);
   };
 
