@@ -29,7 +29,7 @@ const MainFichas = () => {
 
 
   useEffect(() => {
-    const savedData = localStorage.getItem('characterData');
+    const savedData = localStorage.getItem('EnemyData');
     if (savedData) {
       setCharacterData(JSON.parse(savedData));
     }

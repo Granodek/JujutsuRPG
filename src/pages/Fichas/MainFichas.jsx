@@ -16,6 +16,15 @@ const MainFichas = () => {
   const [equipmentGrade, setEquipmentGrade] = useState('');
   const [equipmentEffect, setEquipmentEffect] = useState('');
   const [saveName, setSaveName] = useState('');
+   const [savedList, setSavedList] = useState([]);
+
+  useEffect(() => {
+    const saves = Object.keys(localStorage)
+      .filter(key => key.startsWith('characterData_'))
+      .map(key => key.replace('characterData_', ''));
+  
+    setSavedList(saves);
+  }, []);
 
   useEffect(() => {
     const savedData = localStorage.getItem('characterData');
@@ -205,6 +214,7 @@ const MainFichas = () => {
 
     localStorage.setItem(`characterData_${saveName}`, JSON.stringify(characterData));
     alert(`Dados salvos como "${saveName}"!`);
+    setSavedList(prev => prev.filter(save => save !== name));
   };
 
   const handleLoadSave = (name) => {
@@ -224,6 +234,7 @@ const MainFichas = () => {
   const handleDeleteSave = (name) => {
     localStorage.removeItem(`characterData_${name}`);
     alert(`Salvamento "${name}" deletado!`);
+    setSavedList(prev => prev.filter(save => save !== name));
   };
 
   const handleExportSave = (name) => {
@@ -251,6 +262,7 @@ const MainFichas = () => {
       const saveName = file.name.replace(/\.[^/.]+$/, "");
       localStorage.setItem(`characterData_${saveName}`, JSON.stringify(json));
       alert(`JSON salvo como characterData_${saveName} no localStorage!`);
+      setSavedList(prev => prev.filter(save => save !== name));
     } catch {
       alert("Arquivo inválido! Não é um JSON válido.");
     }
