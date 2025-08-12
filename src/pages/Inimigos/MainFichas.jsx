@@ -220,6 +220,38 @@ const MainFichas = () => {
     alert(`Salvamento "${name}" deletado!`);
   };
 
+  const handleExportSave = (name) => {
+      const conteudo = localStorage.getItem(`EnemyData_${name}`); 
+      
+      const blob = new Blob([conteudo], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${name}.json`;
+      a.click();
+
+      URL.revokeObjectURL(url);
+    };
+
+    const handleJsonUpload = (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const json = JSON.parse(e.target.result);
+      const saveName = file.name.replace(/\.[^/.]+$/, "");
+      localStorage.setItem(`EnemyData_${saveName}`, JSON.stringify(json));
+      alert(`JSON salvo como EnemyData_${saveName} no localStorage!`);
+    } catch {
+      alert("Arquivo inválido! Não é um JSON válido.");
+    }
+  };
+  reader.readAsText(file);
+}
+
   return (
     <div className="flex min-h-screen bg-red-700 text-white">
       <Helmet>
@@ -252,12 +284,14 @@ const MainFichas = () => {
           ))}
         </ul>
         <h3 className="text-lg font-semibold mt-6">Gerenciar Salvamentos</h3>
+        <input type="file" accept=".json" onChange={handleJsonUpload} />
         <ul className="list-disc pl-5">
           {getAllSaves().map((name, index) => (
             <li key={index}>
               {name}
               <button onClick={() => handleLoadSave(name)} className="text-blue-400 ml-2">Carregar</button>
               <button onClick={() => handleDeleteSave(name)} className="text-red-400 ml-2">Excluir</button>
+              <button onClick={() => handleExportSave(name)} className="text-green-400 ml-2">Exportar</button>
             </li>
           ))}
         </ul>
