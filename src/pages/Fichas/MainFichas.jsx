@@ -226,6 +226,20 @@ const MainFichas = () => {
     alert(`Salvamento "${name}" deletado!`);
   };
 
+  const handleExportSave = (name) => {
+      const conteudo = localStorage.getItem(`characterData_${name}`); 
+      
+      const blob = new Blob([conteudo], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${name}.json`;
+      a.click();
+
+      URL.revokeObjectURL(url);
+    };
+
   return (
     <div className="flex min-h-screen bg-red-700 text-white">
       <Helmet>
@@ -264,6 +278,7 @@ const MainFichas = () => {
               {name}
               <button onClick={() => handleLoadSave(name)} className="text-blue-400 ml-2">Carregar</button>
               <button onClick={() => handleDeleteSave(name)} className="text-red-400 ml-2">Excluir</button>
+              <button onClick={() => handleExportSave(name)} className="text-green-400 ml-2">Exportar</button>
             </li>
           ))}
         </ul>
