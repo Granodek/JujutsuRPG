@@ -17,6 +17,16 @@ const MainFichas = () => {
   const [equipmentGrade, setEquipmentGrade] = useState('');
   const [equipmentEffect, setEquipmentEffect] = useState('');
   const [saveName, setSaveName] = useState('');
+  const [savedList, setSavedList] = useState([]);
+
+  useEffect(() => {
+  const saves = Object.keys(localStorage)
+    .filter(key => key.startsWith('EnemyData_'))
+    .map(key => key.replace('EnemyData_', ''));
+
+  setSavedList(saves);
+}, []);
+
 
   useEffect(() => {
     const savedData = localStorage.getItem('characterData');
@@ -199,6 +209,7 @@ const MainFichas = () => {
 
     localStorage.setItem(`EnemyData_${saveName}`, JSON.stringify(characterData));
     alert(`Dados salvos como "${saveName}"!`);
+    setSavedList(prev => prev.filter(save => save !== name));
   };
 
   const handleLoadSave = (name) => {
@@ -206,7 +217,7 @@ const MainFichas = () => {
     if (saved) {
       setCharacterData(JSON.parse(saved));
       alert(`Salvamento "${name}" carregado!`);
-      window.location.reload();
+      setSavedList(prev => prev.filter(save => save !== name));
     } else {
       alert(`Não foi encontrado nenhum salvamento com esse nome.`);
     }
@@ -217,10 +228,11 @@ const MainFichas = () => {
   };
 
   const handleDeleteSave = (name) => {
-    localStorage.removeItem(`EnemyData_${name}`);
-    alert(`Salvamento "${name}" deletado!`);
-    window.location.reload();
-  };
+  localStorage.removeItem(`EnemyData_${name}`);
+  alert(`Salvamento "${name}" deletado!`);
+  setSavedList(prev => prev.filter(save => save !== name));
+};
+
 
   const handleExportSave = (name) => {
       const conteudo = localStorage.getItem(`EnemyData_${name}`); 
@@ -247,7 +259,7 @@ const MainFichas = () => {
       const saveName = file.name.replace(/\.[^/.]+$/, "");
       localStorage.setItem(`EnemyData_${saveName}`, JSON.stringify(json));
       alert(`JSON salvo como EnemyData_${saveName} no localStorage!`);
-      window.location.reload();
+      setSavedList(prev => prev.filter(save => save !== name));
     } catch {
       alert("Arquivo inválido! Não é um JSON válido.");
     }
@@ -294,7 +306,7 @@ const MainFichas = () => {
               {name}
               <button onClick={() => handleLoadSave(name)} className="text-blue-400 ml-2">Carregar</button>
               <button onClick={() => handleDeleteSave(name)} className="text-red-400 ml-2">Excluir</button>
-              <button onClick={() => handleExportSave(name)} className="text-red-400 ml-2">Exportar</button>
+              <button onClick={() => handleExportSave(name)} className="text-green-400 ml-2">Exportar</button>
             </li>
           ))}
         </ul>
