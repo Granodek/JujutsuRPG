@@ -294,7 +294,7 @@ const MainFichas = () => {
               {name}
               <button onClick={() => handleLoadSave(name)} className="text-blue-400 ml-2">Carregar</button>
               <button onClick={() => handleDeleteSave(name)} className="text-red-400 ml-2">Excluir</button>
-              <button onClick={() => handleExportSave(name)} className="text-green-400 ml-2">Exportar</button>
+              <button onClick={() => handleExportSave(name)} className="text-red-400 ml-2">Exportar</button>
             </li>
           ))}
         </ul>
