@@ -218,6 +218,7 @@ const MainFichas = () => {
   const handleDeleteSave = (name) => {
     localStorage.removeItem(`EnemyData_${name}`);
     alert(`Salvamento "${name}" deletado!`);
+    window.location.reload();
   };
 
   const handleExportSave = (name) => {
