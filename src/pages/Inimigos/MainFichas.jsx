@@ -206,6 +206,7 @@ const MainFichas = () => {
     if (saved) {
       setCharacterData(JSON.parse(saved));
       alert(`Salvamento "${name}" carregado!`);
+      window.location.reload();
     } else {
       alert(`Não foi encontrado nenhum salvamento com esse nome.`);
     }
@@ -246,6 +247,7 @@ const MainFichas = () => {
       const saveName = file.name.replace(/\.[^/.]+$/, "");
       localStorage.setItem(`EnemyData_${saveName}`, JSON.stringify(json));
       alert(`JSON salvo como EnemyData_${saveName} no localStorage!`);
+      window.location.reload();
     } catch {
       alert("Arquivo inválido! Não é um JSON válido.");
     }
