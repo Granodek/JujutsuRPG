@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import {Itemm} from './utils/Styles';
+import iitems from "./utils/ItensColor.json"
+import Character from './PlayerCard';
 
 const Inventory = ({ items }) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -21,7 +24,12 @@ const Inventory = ({ items }) => {
             className="border border-gray-700 bg-gray-800 rounded-lg p-4 text-center shadow-md hover:bg-gray-700 transition cursor-pointer"
             onClick={() => handleItemClick(item)}
           >
-            <p className="text-lg font-semibold">{item.name}</p>
+      
+              <Itemm bgColor={iitems[item.name]?.color || "white"}>
+                {item.name}
+              </Itemm>
+
+
             <p className="text-gray-400">{item.quantity}</p>
           </div>
         ))}
