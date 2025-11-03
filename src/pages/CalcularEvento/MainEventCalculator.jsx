@@ -5,6 +5,7 @@ import script from './utils/scripts/script';
 
 const MainEventCalculator = () => {
     const [valueDice, setvalueDice] = useState(null);
+    const [clickCount, setClickCount] = useState(0);
     const [valuesHit, setValuesHit] = useState([0,0,0]);
     const [calculatedDamage, setCalculatedDamage] = useState(0);
     const [currentAtletism, setCurrentAtletism] = useState(0);
@@ -14,7 +15,13 @@ const MainEventCalculator = () => {
       const dice = Math.floor(Math.random() * 20) + 1;
       
       setvalueDice(dice);
+      return dice;
     }
+
+     const addClick = () => {
+  setClickCount(prev => prev + 1);
+  return clickCount + 1; // retorna o valor atualizado
+};
   
     function updateValues(currentAtletism){
       if (!currentAtletism) {
@@ -86,7 +93,7 @@ const MainEventCalculator = () => {
     }
   
     return (
-        <DamageContext.Provider value={{ valueDice, rollDice, valuesHit, calculatedDamage, updateValues, currentAtletism, handleAtletismChange, getColor, handleCalculateDamage, colorHit, setNewValueHit, getColorHit}}>
+        <DamageContext.Provider value={{ valueDice, rollDice, valuesHit, calculatedDamage, updateValues, currentAtletism, handleAtletismChange, getColor, handleCalculateDamage, colorHit, setNewValueHit, getColorHit, clickCount, addClick,}}>
             <DamageCalculator/>
         </DamageContext.Provider>
     )

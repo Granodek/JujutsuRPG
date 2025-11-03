@@ -6,14 +6,16 @@ import { faDiceD20, faSkullCrossbones} from "@fortawesome/free-solid-svg-icons";
 
 const DiceHits = () => {
 
-    const { rollDice, valueDice, updateValues, currentAtletism, valuesHit, getColor} = useContext(DamageContext);
+    const { rollDice, valueDice, updateValues, currentAtletism, valuesHit, getColor, clickCount, addClick} = useContext(DamageContext);
 
     return (
         <div className="flex flex-col justify-center items-center h-full w-full mt-10 space-y-5">
                   <button
                     onClick={() => {
-                      rollDice();
+                      const newDice = rollDice();
+                      const newClick = addClick();
                       updateValues(currentAtletism);
+                      console.log(`click: ${newClick}, Dado: ${newDice}`);
                     }}
                     className="bg-black-600 hover:bg-blue-500 text-black hover:text-white h-16 w-16 rounded-full flex justify-center items-center text-4xl shadow-lg transition-transform transform hover:scale-110 "
                     >

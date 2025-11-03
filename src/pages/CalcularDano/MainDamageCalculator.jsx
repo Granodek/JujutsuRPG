@@ -7,6 +7,7 @@ const scriptKeys = Object.keys(scripts);
 
 const MainDamageCalculator = () => {
   const scriptKeys = useMemo(() => Object.keys(scripts), []);
+  const [clickCount, setClickCount] = useState(0);
   const [valueDice, setvalueDice] = useState(null);
   const [valuesHit, setValuesHit] = useState([0, 0, 0]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +23,13 @@ const MainDamageCalculator = () => {
   function rollDice() {
     const dice = Math.floor(Math.random() * 100) + 1;
     setvalueDice(dice);
+    return dice;
   }
+
+  const addClick = () => {
+  setClickCount(prev => prev + 1);
+  return clickCount + 1; // retorna o valor atualizado
+};
 
   function updateValues(currentAccuracy) {
     if (!currentAccuracy) {
@@ -155,6 +162,8 @@ const MainDamageCalculator = () => {
         getColorHit,
         currentDefense,
         handleDefenseChange,
+        clickCount,
+        addClick,
       }}
     >
       <DamageCalculator />
