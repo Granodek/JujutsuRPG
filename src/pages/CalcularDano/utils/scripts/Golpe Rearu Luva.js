@@ -3,14 +3,16 @@ function rearuFist(dice, defense, accuracy, technique, strength, mastery, setNew
     let raspao = Math.round(accuracy * 0.40);
     let blackFlash = Math.round(accuracy * 0.1);
     let rearuDice;
-    if (dice === 3) {
+    if (dice === 4) {
+        rearuDice = dice - 3;
+    } else if (dice === 3) {
         rearuDice = dice - 2;
     } else if (dice === 2) {
         rearuDice = dice - 1;
     } else if (dice === 1){
         rearuDice = dice;
     } else {
-        rearuDice = dice - 2;
+        rearuDice = dice - 3;
     }
     
     let percFisico = parseFloat(strength) || 0;
