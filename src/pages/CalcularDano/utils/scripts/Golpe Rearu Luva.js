@@ -2,6 +2,9 @@ function rearuFist(dice, defense, accuracy, technique, strength, mastery, setNew
     let acerto = Math.round(accuracy * 0.25);
     let raspao = Math.round(accuracy * 0.40);
     let blackFlash = Math.round(accuracy * 0.1);
+    if(blackFlash > 20){
+        blackFlash = 20;
+    }
     let rearuDice;
     if (dice === 4) {
         rearuDice = dice - 3;

@@ -11,6 +11,10 @@ import Doze from "./Shotgun";
 import Metralha from "./MachineGun";
 import cabeca from "./Cabeçada Divergente";
 import chute from "./Chute Divergente";
+import punhoItadori from "./Punho Divergente Itadori";
+import chuteItadori from "./Chute Divergente Itadori";
+import cabecaItadori from "./Cabeçada Divergente Itadori";
+
 
 import iconKatana from "../../../../assets/Ataques/Katana Caida.png";
 import iconFavorOfFateFortuneFist from "../../../../assets/Ataques/Favor do Destino Punho da Fortuna.png";
@@ -29,15 +33,30 @@ const scripts = {
     image: iconPunhoDivergente,
     calculateDamage: punhoDivergente,
   },
+  punhoItadori: {
+    name: "punho Divergente(Itadori)",
+    image: iconPunhoDivergente,
+    calculateDamage: punhoItadori,
+  },
   chuteDivergente: {
     name: "chute Divergente",
     image: iconPunhoDivergente,
     calculateDamage: chute,
   },
+  chuteItadori: {
+    name: "chute Divergente(Itadori)",
+    image: iconPunhoDivergente,
+    calculateDamage: chuteItadori,
+  },
   cabecadaDivergente: {
     name: "cabeçada Divergente",
     image: iconPunhoDivergente,
     calculateDamage: cabeca,
+  },
+  cabecadaItadori: {
+    name: "cabeçada Divergente(Itadori)",
+    image: iconPunhoDivergente,
+    calculateDamage: cabecaItadori,
   },
   Fortune: {
     name: "Favor do Destino Punho da Fortuna",

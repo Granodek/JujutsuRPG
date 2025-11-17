@@ -2,7 +2,9 @@ function cabecaDivergente(dice, defense, accuracy, technique, strength, mastery,
     let acerto = Math.round(accuracy * 0.25);
     let raspao = Math.round(accuracy * 0.40);
     let blackFlash = Math.round(accuracy * 0.1);
-
+    if(blackFlash > 20){
+        blackFlash = 20;
+    }
     let percFisico = parseFloat(strength) || 0;
     let percTecnica = parseFloat(technique) || 0;
     let percMastery = Number(mastery) || 0;
