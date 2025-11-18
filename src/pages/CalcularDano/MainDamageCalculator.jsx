@@ -29,7 +29,7 @@ const MainDamageCalculator = () => {
   const addClick = () => {
   setClickCount(prev => prev + 1);
   return clickCount + 1; // retorna o valor atualizado
-};
+ };
 
   function updateValues(currentAccuracy) {
     if (!currentAccuracy) {
@@ -38,7 +38,7 @@ const MainDamageCalculator = () => {
       let hit = Math.round(currentAccuracy * 0.25);
       let nearMiss = Math.round(currentAccuracy * 0.40);
       let blackFlash = Math.round(currentAccuracy * 0.10);
-      if(blackFlash > 20){
+      if(blackFlash > 20 && !currentScript.name.includes("(Itadori)")){
         blackFlash = 20;
       }
       setValuesHit([hit, nearMiss, blackFlash]);
