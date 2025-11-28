@@ -5,7 +5,7 @@ function favorOfFateFist(dice, defense, accuracy, technique, strength, mastery, 
     let percMastery = Number(mastery) || 0;
     let dano;
 
-    if (dice <= 30) {
+    if (dice <= 336) {
         percTecnica *= 3.0
         percFisico *= 1.5   
         dano = percFisico + percTecnica
@@ -13,7 +13,7 @@ function favorOfFateFist(dice, defense, accuracy, technique, strength, mastery, 
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!!!");
         return `Dano Crítico de 100%: ${dano.toFixed(2)}`;
-    } else if (dice <= 60) {
+    } else if (dice <= 70) {
         percTecnica *= 2.40 
         dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
