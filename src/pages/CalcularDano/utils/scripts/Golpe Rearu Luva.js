@@ -5,17 +5,9 @@ function rearuFist(dice, defense, accuracy, technique, strength, mastery, setNew
     if(blackFlash > 20){
         blackFlash = 20;
     }
-    let rearuDice;
-    if (dice === 4) {
-        rearuDice = dice - 3;
-    } else if (dice === 3) {
-        rearuDice = dice - 2;
-    } else if (dice === 2) {
-        rearuDice = dice - 1;
-    } else if (dice === 1){
-        rearuDice = dice;
-    } else {
-        rearuDice = dice - 3;
+    let rearuDice = dice - 13;
+    if (rearuDice < 1){
+        rearuDice = 1;
     }
     
     let percFisico = parseFloat(strength) || 0;
