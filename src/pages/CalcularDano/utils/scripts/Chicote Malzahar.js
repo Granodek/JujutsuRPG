@@ -13,12 +13,12 @@ function chicote(dice, defense, accuracy, technique, strength, mastery, setNewVa
     let dano;
 
     if (dice === 1) {
-        percArma = percFisico * 2.8 + (percTecnica * 1.25);
-        dano = percArma * 1.5
+        percArma = percFisico * 2.1 + (percTecnica * 1.0);
+        dano = percArma * 1.2
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!!!");
-        return `Dano Crítico 150%: ${dano.toFixed(2)}`;
+        return `Dano Crítico: ${dano.toFixed(2)}`;
     } else if (dice <= blackFlash) {
         percArma = percFisico * 2.1 + (percTecnica * 1.0);
         dano = percArma * 1.2

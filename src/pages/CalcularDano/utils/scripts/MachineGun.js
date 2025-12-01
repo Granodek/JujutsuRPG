@@ -12,12 +12,12 @@ function Metralha(dice, defense, accuracy, technique, strength, mastery, setNewV
     let dano;
 
     if (dice === 1) {
-        percTecnica *= 1.25  
-        dano = percFisico + percTecnica
+        percTecnica *= 1.0 
+        dano = (percFisico * 0.75) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
-        return `Black Flash Dano 300%: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(2)}`;
     } else if (dice <= blackFlash) {
         percTecnica *= 1.0 
         dano = (percFisico * 0.75) + percTecnica

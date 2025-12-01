@@ -5,7 +5,7 @@ function rearuFist(dice, defense, accuracy, technique, strength, mastery, setNew
     if(blackFlash > 20){
         blackFlash = 20;
     }
-    let rearuDice = dice - 13;
+    let rearuDice = dice - 99;
     if (rearuDice < 1){
         rearuDice = 1;
     }
@@ -16,13 +16,12 @@ function rearuFist(dice, defense, accuracy, technique, strength, mastery, setNew
     let dano;
 
     if (rearuDice === 1) {
-        percTecnica *= 3.0
-        percFisico *= 1.5   
-        dano = percFisico + percTecnica
+         percTecnica *= 2.40 
+        dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!!!");
-        return `Black Flash Dano 300%: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(2)}`;
     } else if (rearuDice <= blackFlash) {
         percTecnica *= 2.40 
         dano = (percFisico * 1.2) + percTecnica

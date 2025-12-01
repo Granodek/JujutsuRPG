@@ -1,4 +1,4 @@
-function Doze(dice, defense, accuracy, technique, strength, mastery, setNewValueHit) {   
+function punhoCorre(dice, defense, accuracy, technique, strength, mastery, setNewValueHit) {   
     let acerto = Math.round(accuracy * 0.25);
     let raspao = Math.round(accuracy * 0.40);
     let blackFlash = Math.round(accuracy * 0.1);
@@ -10,39 +10,47 @@ function Doze(dice, defense, accuracy, technique, strength, mastery, setNewValue
     let percMastery = Number(mastery) || 0;
 
     let dano;
+    let danoEnergia = percTecnica * 0.5;
 
     if (dice === 1) {
-        percTecnica *= 0.75  
-        dano = (percFisico*0.5) + percTecnica
+        percTecnica *= 2.40 
+        dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
+        danoEnergia *= (1 + percMastery / 100);
+        danoEnergia = Math.abs((danoEnergia/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
-        return `Black Flash Dano: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(0)} e ${danoEnergia.toFixed(0)}`;
     } else if (dice <= blackFlash) {
-        percTecnica *= 0.75  
-        dano = (percFisico*0.5) + percTecnica
+        percTecnica *= 2.40 
+        dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
+        danoEnergia *= (1 + percMastery / 100);
         setNewValueHit("BLACKFLASH!");
-        return `Black Flash Dano: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(0)} e ${danoEnergia.toFixed(0)}`;
     } else if (dice <= acerto) {
-        percTecnica *= 0.75  
-        dano = (percFisico*0.5) + percTecnica
+        
+        percTecnica *= 0.60;
+        dano = percFisico + percTecnica;
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
+        danoEnergia *= (1 + percMastery / 100);
         setNewValueHit("ACERTO");
-        return `Dano de Acerto: ${dano.toFixed(2)}`;
+        return `Dano de Acerto: ${dano.toFixed(0)} e ${danoEnergia.toFixed(0)}`;
     } else if (dice <= raspao) {
-        percTecnica *= 0.75  
-        dano = (percFisico*0.5) + percTecnica
+        percFisico *= 0.50
+        percTecnica *= 0.30
+        dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
+        danoEnergia *= (1 + percMastery / 100);
         setNewValueHit("RASPAO");
-        return `Dano de Raspão: ${dano.toFixed(2)}`;
+        return `Dano de Raspão: ${dano.toFixed(0)} e ${danoEnergia.toFixed(0)}`;
     } else {
         setNewValueHit("ERROU");
         return 'Você Errou';
     };
 }
 
-export default Doze;
+export default punhoCorre;

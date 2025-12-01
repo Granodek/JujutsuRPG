@@ -13,12 +13,11 @@ function cabecaDivergente(dice, defense, accuracy, technique, strength, mastery,
 
     if (dice === 1) {
         percTecnica *= 2.1
-        percFisico *= 2.0   
-        dano = percFisico + percTecnica
+        dano = (percFisico * 1.35) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
-        return `Black Flash Dano 300%: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(2)}`;
     } else if (dice <= blackFlash) {
         percTecnica *= 2.1
         dano = (percFisico * 1.35) + percTecnica

@@ -13,13 +13,12 @@ function chuteDivergente(dice, defense, accuracy, technique, strength, mastery, 
     let dano;
 
     if (dice === 1) {
-        percTecnica *= 3.6
-        percFisico *= 2.0   
-        dano = percFisico + percTecnica
+        percTecnica *= 2.70 
+        dano = (percFisico * 1.6) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
-        return `Black Flash Dano 300%: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(2)}`;
     } else if (dice <= blackFlash) {
         percTecnica *= 2.70 
         dano = (percFisico * 1.6) + percTecnica

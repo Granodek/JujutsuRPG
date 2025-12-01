@@ -11,13 +11,12 @@ function RyumaAttack(dice, defense, accuracy, technique, strength, mastery, setN
     let dano;
 
     if (dice === 1) {
-        percTecnica *= 2
-        percFisico *= 1.5   
-        dano = percFisico + percTecnica
+        percTecnica *= 1.5 
+        dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
-        return `Critico Dano 200%: ${dano.toFixed(2)}`;
+        return `Critico Dano: ${dano.toFixed(2)}`;
     } else if (dice <= blackFlash) {
         percTecnica *= 1.5 
         dano = (percFisico * 1.2) + percTecnica

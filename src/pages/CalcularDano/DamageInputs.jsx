@@ -16,7 +16,7 @@ const DamageInputs = () => {
         <form id="inputs" className="bg-transparent mt-5 p-5 bg-gray-800 rounded-lg bg-contain shadow-lg bg-center bg-no-repeat" style={{
             backgroundImage: `url(${bgVortex})`,
         }}>
-            <div className="flex flex-col justify-center items-center h-full w-full my-5">
+            <div className="flex flex-col justify-center items-center h-full w-auto my-5">
               <Helmet>
         <title>Calcular Dano</title>
       </Helmet>
@@ -28,7 +28,7 @@ const DamageInputs = () => {
               >
                 <img src={IconCritDamage} alt="icon" className="w-9 h-9" />
               </button>
-              <h2 id="damage" className={`text-4xl font-bold py-2 px-4 rounded-lg shadow-md mt-4 bg-gray-800 ${getColorHit(colorHit,valueDice)}`}>
+              <h2 id="damage" className={`text-4xl font-bold text-center py-2 px-4 rounded-lg shadow-md mt-4 bg-gray-800 ${getColorHit(colorHit,valueDice)}`}>
                 {calculatedDamage || "0"}
               </h2>
             </div>

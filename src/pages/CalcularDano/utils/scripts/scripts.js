@@ -1,7 +1,6 @@
-import favorOfFateFortuneFist from "./Favor do Destino Punho da Fortuna";
+
 import rearuFist from "./Golpe Rearu Luva";
 import punhoDivergente from "./Punho Divergente";
-import favorOfFateFist from "./Favor do Destino Punho";
 import fallenKatana from "./Katana Caida";
 import RyumaAttack from "./Ryuma Ataque";
 import chicote from "./Chicote Malzahar";
@@ -14,13 +13,12 @@ import chute from "./Chute Divergente";
 import punhoItadori from "./Punho Divergente Itadori";
 import chuteItadori from "./Chute Divergente Itadori";
 import cabecaItadori from "./Cabeçada Divergente Itadori";
+import punhoCorre from "./Punho Corre"
 
 
 import iconKatana from "../../../../assets/Ataques/Katana Caida.png";
-import iconFavorOfFateFortuneFist from "../../../../assets/Ataques/Favor do Destino Punho da Fortuna.png";
 import iconRearuFist from "../../../../assets/Ataques/Punho Rearu.png";
 import iconPunhoDivergente from "../../../../assets/Ataques/Punho Divergente.png";
-import iconFavorOfFateFist from "../../../../assets/Ataques/Favor Do Destino.png";
 import iconChicoteMalzahar from "../../../../assets/Ataques/Chicote Malzahar.png";
 import iconAdagas from "../../../../assets/Ataques/Adaguinhas.png";
 import iconPistol from "../../../../assets/Ataques/Pistol.png";
@@ -32,6 +30,11 @@ const scripts = {
     name: "punho Divergente",
     image: iconPunhoDivergente,
     calculateDamage: punhoDivergente,
+  },
+  punhoCorre: {
+    name: "punho Divergente(Kōhī)",
+    image: iconPunhoDivergente,
+    calculateDamage: punhoCorre,
   },
   punhoItadori: {
     name: "punho Divergente(Itadori)",
@@ -58,16 +61,6 @@ const scripts = {
     image: iconPunhoDivergente,
     calculateDamage: cabecaItadori,
   },
-  Fortune: {
-    name: "Favor do Destino Punho da Fortuna",
-    image: iconFavorOfFateFortuneFist,
-    calculateDamage: favorOfFateFortuneFist,
-  },
-  destiny: {
-    name: "Favor do Destino Punho",
-    image: iconFavorOfFateFist,
-    calculateDamage: favorOfFateFist,
-  },
   Rearu: {
     name: "Punho Rearu",
     image: iconRearuFist,
@@ -84,7 +77,7 @@ const scripts = {
     calculateDamage: RyumaAttack,
   },
   Malzahar: {
-    name: "Chicote Malzahar",
+    name: "Chicote",
     image: iconChicoteMalzahar,
     calculateDamage: chicote,
   },

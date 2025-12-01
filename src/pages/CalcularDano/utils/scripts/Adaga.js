@@ -13,12 +13,12 @@ function adaga(dice, defense, accuracy, technique, strength, mastery, setNewValu
     let dano;
 
     if (dice === 1) {
-        percArma = percFisico * 1.2 + (percTecnica * 1.2) + 50;
-        dano = percArma * 1.5
+        percArma = percFisico * 0.9 + (percTecnica * 0.8) + 50;
+        dano = percArma * 1.2
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!!!");
-        return `Dano Crítico 150%: ${dano.toFixed(2)}`;
+        return `Dano Crítico: ${dano.toFixed(2)}`;
     } else if (dice <= blackFlash) {
         percArma = percFisico * 0.9 + (percTecnica * 0.8) + 50;
         dano = percArma * 1.2

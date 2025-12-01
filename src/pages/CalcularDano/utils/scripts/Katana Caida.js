@@ -13,12 +13,12 @@ function fallenKatana(dice, defense, accuracy, technique, strength, mastery, set
     let dano;
 
     if (dice === 1) {
-        percArma = percFisico * 1.8 + (percTecnica * 1.6) + 350;
-        dano = percArma * 1.5
+        percArma = percFisico * 1.35 + (percTecnica * 1.2) + 350;
+        dano = percArma * 1.2
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!!!");
-        return `Dano Crítico 150%: ${dano.toFixed(2)}`;
+        return `Dano Crítico: ${dano.toFixed(2)}`;
     } else if (dice <= blackFlash) {
         percArma = percFisico * 1.35 + (percTecnica * 1.2) + 350;
         dano = percArma * 1.2
