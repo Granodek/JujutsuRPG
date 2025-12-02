@@ -13,6 +13,10 @@ function chuteCorre(dice, defense, accuracy, technique, strength, mastery, setNe
     let dano;
     let danoEnergia = (percTecnica * 0.75);
 
+    if((100-defense) >= 100){
+        danoEnergia = Math.abs((danoEnergia/100) * (100-defense));
+    }
+
     if (dice === 1) {
         percTecnica *= 2.70 
         dano = (percFisico * 1.6) + percTecnica
