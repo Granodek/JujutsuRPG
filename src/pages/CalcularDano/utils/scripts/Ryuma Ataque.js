@@ -16,21 +16,21 @@ function RyumaAttack(dice, defense, accuracy, technique, strength, mastery, setN
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
-        return `Critico Dano: ${dano.toFixed(2)}`;
+        return `Critico Dano: ${dano.toFixed(0)}`;
     } else if (dice <= blackFlash) {
         percTecnica *= 1.5 
         dano = (percFisico * 1.2) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!");
-        return `Critico Dano: ${dano.toFixed(2)}`;
+        return `Critico Dano: ${dano.toFixed(0)}`;
     } else if (dice <= acerto) {
         percTecnica *= 0.60
         dano = percFisico + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("ACERTO");
-        return `Dano de Acerto: ${dano.toFixed(2)}`;
+        return `Dano de Acerto: ${dano.toFixed(0)}`;
     } else if (dice <= raspao) {
         percFisico *= 0.50
         percTecnica *= 0.30
@@ -38,7 +38,7 @@ function RyumaAttack(dice, defense, accuracy, technique, strength, mastery, setN
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("RASPAO");
-        return `Dano de Raspão: ${dano.toFixed(2)}`;
+        return `Dano de Raspão: ${dano.toFixed(0)}`;
     } else {
         setNewValueHit("ERROU");
         return 'Você Errou';

@@ -38,6 +38,14 @@ const MainDamageCalculator = () => {
       let hit = Math.round(currentAccuracy * 0.25);
       let nearMiss = Math.round(currentAccuracy * 0.40);
       let blackFlash = Math.round(currentAccuracy * 0.10);
+      if(currentScript.name.includes("chute")){
+        hit *= 0.9;
+        hit = hit.toFixed(0);
+        nearMiss *= 0.9;
+        nearMiss = nearMiss.toFixed(0);
+        blackFlash *= 0.9;
+        blackFlash = blackFlash.toFixed(0);
+      }
       if(blackFlash > 20 && !currentScript.name.includes("(Itadori)")){
         blackFlash = 20;
       }

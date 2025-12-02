@@ -17,14 +17,14 @@ function cabecaDivergente(dice, defense, accuracy, technique, strength, mastery,
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
-        return `Black Flash Dano: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(0)}`;
     } else if (dice <= blackFlash) {
         percTecnica *= 2.1
         dano = (percFisico * 1.35) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!");
-        return `Black Flash Dano: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(0)}`;
     } else if (dice <= acerto) {
         percTecnica *= 0.9
         percFisico *= 0.7
@@ -32,7 +32,7 @@ function cabecaDivergente(dice, defense, accuracy, technique, strength, mastery,
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("ACERTO");
-        return `Dano de Acerto: ${dano.toFixed(2)}`;
+        return `Dano de Acerto: ${dano.toFixed(0)}`;
     } else if (dice <= raspao) {
         percFisico *= 0.45
         percTecnica *= 0.35
@@ -40,7 +40,7 @@ function cabecaDivergente(dice, defense, accuracy, technique, strength, mastery,
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("RASPAO");
-        return `Dano de Raspão: ${dano.toFixed(2)}`;
+        return `Dano de Raspão: ${dano.toFixed(0)}`;
     } else {
         setNewValueHit("ERROU");
         return 'Você Errou';

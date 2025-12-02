@@ -1,5 +1,5 @@
 function chuteDivergente(dice, defense, accuracy, technique, strength, mastery, setNewValueHit) {
-    accuracy *= 1.1   
+    accuracy *= 0.9;   
     let acerto = Math.round(accuracy * 0.25);
     let raspao = Math.round(accuracy * 0.40);
     let blackFlash = Math.round(accuracy * 0.1);
@@ -18,14 +18,14 @@ function chuteDivergente(dice, defense, accuracy, technique, strength, mastery, 
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
-        return `Black Flash Dano: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(0)}`;
     } else if (dice <= blackFlash) {
         percTecnica *= 2.70 
         dano = (percFisico * 1.6) + percTecnica
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("BLACKFLASH!");
-        return `Black Flash Dano: ${dano.toFixed(2)}`;
+        return `Black Flash Dano: ${dano.toFixed(0)}`;
     } else if (dice <= acerto) {
         percTecnica *= 0.90
         percFisico *= 1.2
@@ -33,7 +33,7 @@ function chuteDivergente(dice, defense, accuracy, technique, strength, mastery, 
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("ACERTO");
-        return `Dano de Acerto: ${dano.toFixed(2)}`;
+        return `Dano de Acerto: ${dano.toFixed(0)}`;
     } else if (dice <= raspao) {
         percFisico *= 0.60
         percTecnica *= 0.45
@@ -41,7 +41,7 @@ function chuteDivergente(dice, defense, accuracy, technique, strength, mastery, 
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         setNewValueHit("RASPAO");
-        return `Dano de Raspão: ${dano.toFixed(2)}`;
+        return `Dano de Raspão: ${dano.toFixed(0)}`;
     } else {
         setNewValueHit("ERROU");
         return 'Você Errou';

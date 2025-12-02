@@ -20,7 +20,6 @@ function punhoCorre(dice, defense, accuracy, technique, strength, mastery, setNe
         dano *= (1 + percMastery / 100);
         dano = Math.abs((dano/100) * (100-defense));
         danoEnergia *= (1 + percMastery / 100);
-        danoEnergia = Math.abs((danoEnergia/100) * (100-defense));
         setNewValueHit("BLACKFLASH!!!");
         return `Black Flash Dano: ${dano.toFixed(0)} e ${danoEnergia.toFixed(0)}`;
     } else if (dice <= blackFlash) {

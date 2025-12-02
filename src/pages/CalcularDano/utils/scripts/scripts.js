@@ -13,7 +13,9 @@ import chute from "./Chute Divergente";
 import punhoItadori from "./Punho Divergente Itadori";
 import chuteItadori from "./Chute Divergente Itadori";
 import cabecaItadori from "./Cabeçada Divergente Itadori";
-import punhoCorre from "./Punho Corre"
+import punhoCorre from "./Punho Corre";
+import chuteCorre from "./Chute Corre";
+import cabecaCorre from "./Cabeçada Corre";
 
 
 import iconKatana from "../../../../assets/Ataques/Katana Caida.png";
@@ -46,6 +48,11 @@ const scripts = {
     image: iconPunhoDivergente,
     calculateDamage: chute,
   },
+  chuteCorre: {
+    name: "chute Divergente(Kōhī)",
+    image: iconPunhoDivergente,
+    calculateDamage: chuteCorre,
+  },
   chuteItadori: {
     name: "chute Divergente(Itadori)",
     image: iconPunhoDivergente,
@@ -55,6 +62,11 @@ const scripts = {
     name: "cabeçada Divergente",
     image: iconPunhoDivergente,
     calculateDamage: cabeca,
+  },
+  cabecaCorre: {
+    name: "cabeçada Divergente(Kōhī)",
+    image: iconPunhoDivergente,
+    calculateDamage: cabecaCorre,
   },
   cabecadaItadori: {
     name: "cabeçada Divergente(Itadori)",

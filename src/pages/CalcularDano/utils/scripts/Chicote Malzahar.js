@@ -18,28 +18,28 @@ function chicote(dice, defense, accuracy, technique, strength, mastery, setNewVa
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!!!");
-        return `Dano Crítico: ${dano.toFixed(2)}`;
+        return `Dano Crítico: ${dano.toFixed(0)}`;
     } else if (dice <= blackFlash) {
         percArma = percFisico * 2.1 + (percTecnica * 1.0);
         dano = percArma * 1.2
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("BLACKFLASH!");
-        return `Dano Crítico: ${dano.toFixed(2)}`;
+        return `Dano Crítico: ${dano.toFixed(0)}`;
     } else if (dice <= acerto) {
         percArma = percFisico * 1.4 + (percTecnica * 0.5);
         dano = percArma;
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("ACERTO");
-        return `Dano de Acerto: ${dano.toFixed(2)}`;
+        return `Dano de Acerto: ${dano.toFixed(0)}`;
     } else if (dice <= raspao) {
         percArma = percFisico * 0.7 + (percTecnica * 0.25);
         dano = percArma;
         dano *= (1 + percMastery / 100);
         dano = (dano/100) * (100-defense);
         setNewValueHit("RASPAO");
-        return `Dano de Raspão: ${dano.toFixed(2)}`;
+        return `Dano de Raspão: ${dano.toFixed(0)}`;
     } else {
         setNewValueHit("ERROU");
         return 'Você Errou';
