@@ -1,7 +1,7 @@
 {
   "Rearu": {
     "name": "Rearu",
-    "image": "/JujutsuRPG/assets/Personagens/Rearu.png",
+    "image": "/assets/Personagens/Rearu.png",
     "level": 13,
     "grade": "Grade semi-special",
     "effects": [
@@ -72,7 +72,7 @@
   },
   "Amaterasu": {
     "name": "Amaterasu",
-    "image": "/JujutsuRPG/assets/Personagens/Amat.jpg",
+    "image": "/assets/Personagens/Amat.jpg",
     "level": 4,
     "grade": "Grade 1",
     "effects": [
@@ -141,7 +141,7 @@
   },
   "PrinceOfRot": {
     "name": "Príncipe da Podridão(Morto)",
-    "image": "/JujutsuRPG/assets/Personagens/Principe Podre.png",
+    "image": "/assets/Personagens/Principe Podre.png",
     "level": 21,
     "grade": "Special Grade",
     "effects": [
@@ -192,7 +192,7 @@
   },
   "Ryuma": {
     "name": "Ryuma",
-    "image": "/JujutsuRPG/assets/Personagens/Ryuma.png",
+    "image": "/assets/Personagens/Ryuma.png",
     "level": 13,
     "grade": "Grade 1",
     "effects": [
@@ -223,7 +223,7 @@
   },
   "FallenAngel": {
     "name": "Fallen Angel",
-    "image": "/JujutsuRPG/assets/Personagens/FallenAngel.png",
+    "image": "/assets/Personagens/FallenAngel.png",
     "level": 1,
     "grade": "Special Grade",
     "effects": [
@@ -255,7 +255,7 @@
   },
   "Nocturnal": {
     "name": "Nocturnal",
-    "image": "/JujutsuRPG/assets/Personagens/imagemdocesao.png",
+    "image": "/assets/Personagens/imagemdocesao.png",
     "level": 12,
     "grade": "Special Grade",
     "effects": [
@@ -288,7 +288,7 @@
   },
   "Malzahar": {
     "name": "Malzahar",
-    "image": "/JujutsuRPG/assets/Personagens/Malzahar2.png",
+    "image": "/assets/Personagens/Malzahar2.png",
     "level": 1,
     "grade": "Special Grade",
     "effects": [
