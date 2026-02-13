@@ -31,7 +31,7 @@ const MainFichas = () => {
     if (savedData) {
       setCharacterData(JSON.parse(savedData));
     } else {
-      fetch('/JujutsuRPG/item.json')
+      fetch('/item.json')
         .then((res) => res.json())
         .then((data) => setCharacterData(data))
         .catch((err) => console.error("Erro ao carregar item.json:", err));
