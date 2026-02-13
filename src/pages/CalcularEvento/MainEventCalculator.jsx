@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import DamageCalculator from './DamageCalculator';
 import { DamageContext } from "../../context/main"
-import script from './utils/scripts/script';
+import script from './utils/scripts/Script.js';
 
 const MainEventCalculator = () => {
     const [valueDice, setvalueDice] = useState(null);
